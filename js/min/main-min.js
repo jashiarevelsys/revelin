@@ -1,0 +1,1 @@
+$(document).ready(function(){$("#fullpage").fullpage({anchors:["revelin","sales","fees","promo","integrate","more","data"],menu:"#menu",css3:!0,scrollingSpeed:1e3})});
