@@ -7,6 +7,9 @@ $mobile: 650px;
 $medium: 1000px;
 
 #drawer {
+	a:hover {
+		color: $revelblue;
+	}
 	#menu {
 		list-style: none;
 
@@ -225,6 +228,15 @@ body {
 		&.on span:after {
 		  transform: rotate(-45deg) translate(6px, -7px);
 		}
+	}
+}
+
+.blue {
+	color:white;
+	&:hover {
+		color: $revelblue;
+		border-color: $revelblue;
+		cursor: pointer;
 	}
 }
 

@@ -109,6 +109,8 @@ em::after {
 
 /* new custom styles */
 /* VARIABLES */
+#drawer a:hover {
+  color: #00a3e0; }
 #drawer #menu {
   list-style: none; }
   #drawer #menu li a {
@@ -251,3 +253,9 @@ body.fp-viewing-data .arrowDown {
       transform: rotate(45deg) translate(-1px, 0px); }
     .toggle-mnu.on span:after {
       transform: rotate(-45deg) translate(6px, -7px); } }
+.blue {
+  color: white; }
+  .blue:hover {
+    color: #00a3e0;
+    border-color: #00a3e0;
+    cursor: pointer; }
