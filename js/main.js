@@ -3,6 +3,9 @@ $(document).ready(function() {
 		anchors: ["revelin", "sales", "fees", "promo", "integrate", "more", "data" ],
 		menu: '#menu',
 		css3: true,
-        scrollingSpeed: 1000
+        scrollingSpeed: 1000,
+        navigation: true,
+        navigationPosition: "right",
+        navigationTooltips: [ "revelin", "sales", "fees", "promo", "integrate", "more", "data" ]
 	});
 });

@@ -114,3 +114,6 @@ em::after {
 /* new custom styles */
 #drawer #menu {
   list-style: none; }
+
+#fp-nav ul li a span {
+  background: #fff; }
