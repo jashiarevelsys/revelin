@@ -12,9 +12,21 @@ $(document).ready(function() {
         	if ( sectionClass !== "revelin") {
         		$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden');
         	} else {
-       			$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden').css( "animation-delay", "1s" );
+       			$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden').css( { 	'-webkit-animation-delay': '2s',
+       																								'animation-delay': '2s' });
+        	}
+        },
+        afterResize: function() {
+        	var pluginContainerWidth = $(this).width();
+        	if (pluginContainerWidth > 651) {
+        		$('#drawer').css("display", "block");
+        		$('.toggle-mnu').removeClass('on');
+        	} else {
+        		$('#drawer').css("display", "none");
+        		$('.toggle-mnu').removeClass('on');
         	}
         }
+
 	});
 
 	$('.arrowUp').click(function() {
@@ -29,5 +41,13 @@ $(document).ready(function() {
 	  $(this).toggleClass("on");
 	  $("#drawer").toggle('slide');
 	  return false;
+	});
+
+	$('ul#menu li a').click(function(){
+		var theWidth = $( window ).width();
+		if (theWidth < 651) {
+			$(".toggle-mnu").toggleClass("on");
+			$("#drawer").toggle('slide');
+		}
 	});
 });

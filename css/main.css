@@ -259,3 +259,11 @@ body.fp-viewing-data .arrowDown {
     color: #00a3e0;
     border-color: #00a3e0;
     cursor: pointer; }
+
+@media (max-width: 1291px) {
+  form input {
+    width: 100%;
+    margin-bottom: 10px; }
+
+  .blue {
+    width: 100%; } }
