@@ -36,10 +36,6 @@ a.s-link {
   display: inline-block;
   margin: 10px 10px 10px 0; }
 
-#fullpage {
-  margin-left: 200px;
-  width: 100%; }
-
 .section {
   box-sizing: border-box;
   width: 100%;
@@ -112,8 +108,146 @@ em::after {
   background-image: url("http://staging.revelsystems.com/wp-content/uploads/2016/08/revelin-digital.jpg"); }
 
 /* new custom styles */
+/* VARIABLES */
 #drawer #menu {
   list-style: none; }
+  #drawer #menu li a {
+    position: relative;
+    color: white;
+    text-decoration: none; }
+    #drawer #menu li a:hover {
+      color: #00a3e0; }
+      #drawer #menu li a:hover:before {
+        visibility: visible;
+        transform-origin: left;
+        -webkit-transform: scaleX(1);
+        transform: scaleX(1); }
+    #drawer #menu li a:before {
+      content: "";
+      position: absolute;
+      transform-origin: left;
+      width: 100%;
+      height: 2px;
+      bottom: 0;
+      left: 0;
+      background-color: white;
+      visibility: hidden;
+      -webkit-transform: scaleX(0);
+      transform: scaleX(0);
+      -webkit-transition: all 0.5s ease-in-out 0s;
+      transition: all 0.5s ease-in-out 0s; }
 
 #fp-nav ul li a span {
   background: #fff; }
+  #fp-nav ul li a span:hover {
+    background: #00a3e0; }
+#fp-nav ul li a.active span {
+  background: #00a3e0; }
+
+/* adds the arrow control to the page */
+.arrowUp, .arrowDown {
+  position: fixed;
+  z-index: 99;
+  cursor: pointer;
+  margin-left: -38px;
+  left: 50%; }
+  .arrowUp a, .arrowDown a {
+    display: inline-block; }
+  .arrowUp a:hover .left, .arrowUp a:hover .top, .arrowUp a:hover .bottom, .arrowUp a:hover .right, .arrowDown a:hover .left, .arrowDown a:hover .top, .arrowDown a:hover .bottom, .arrowDown a:hover .right {
+    border: 0.2em solid #00a3e0;
+    /*background-color: rgba(156, 156, 156, 0.5);*/ }
+  .arrowUp a:hover .left:after, .arrowUp a:hover .top:after, .arrowUp a:hover .bottom:after, .arrowUp a:hover .right:after, .arrowDown a:hover .left:after, .arrowDown a:hover .top:after, .arrowDown a:hover .bottom:after, .arrowDown a:hover .right:after {
+    border-top: 0.5em solid #00a3e0;
+    border-right: 0.5em solid #00a3e0; }
+  .arrowUp .top, .arrowUp .bottom, .arrowDown .top, .arrowDown .bottom {
+    border-radius: 20%;
+    border: 0.2em solid #8a8a8a;
+    display: inline-block;
+    width: 4em;
+    height: 4em; }
+  .arrowUp .top:after, .arrowDown .top:after {
+    content: '';
+    display: inline-block;
+    margin-top: 36%;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.3em solid #8a8a8a;
+    border-right: 0.3em solid #8a8a8a;
+    -moz-transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    margin-left: 30%; }
+  .arrowUp .bottom:after, .arrowDown .bottom:after {
+    content: '';
+    display: inline-block;
+    margin-top: 26%;
+    width: 1.4em;
+    height: 1.4em;
+    border-top: 0.3em solid #8a8a8a;
+    border-right: 0.3em solid #8a8a8a;
+    -moz-transform: rotate(135deg);
+    -webkit-transform: rotate(135deg);
+    transform: rotate(135deg);
+    margin-left: 30%; }
+
+.arrowDown {
+  bottom: 20px; }
+
+.arrowUp {
+  top: 20px; }
+
+body.fp-viewing-revelin .arrowUp {
+  display: none; }
+body.fp-viewing-data .arrowDown {
+  display: none; }
+
+.textbox {
+  background-color: rgba(0, 0, 0, 0.5); }
+  @media (max-width: 650px) {
+    .textbox.tb-left, .textbox.tb-bottom {
+      width: 95%;
+      margin-left: 10px; } }
+
+#fullpage {
+  margin-left: 200px;
+  width: 100%; }
+  @media (max-width: 650px) {
+    #fullpage {
+      margin-left: 0px; } }
+
+@media (max-width: 650px) {
+  #drawer {
+    display: none; } }
+
+@media (max-width: 650px) {
+  .toggle-mnu {
+    position: absolute;
+    left: 20px;
+    display: block;
+    width: 28px;
+    height: 28px;
+    margin-top: 14px;
+    z-index: 105; }
+    .toggle-mnu span:after, .toggle-mnu span:before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px; }
+    .toggle-mnu span:after {
+      top: 18px; }
+    .toggle-mnu span {
+      position: relative;
+      display: block; }
+    .toggle-mnu span, .toggle-mnu span:after, .toggle-mnu span:before {
+      width: 100%;
+      height: 2px;
+      background-color: #fff;
+      transition: all 0.3s;
+      backface-visibility: hidden;
+      border-radius: 2px; }
+    .toggle-mnu.on span {
+      background-color: transparent; }
+    .toggle-mnu.on span:before {
+      transform: rotate(45deg) translate(-1px, 0px); }
+    .toggle-mnu.on span:after {
+      transform: rotate(-45deg) translate(6px, -7px); } }

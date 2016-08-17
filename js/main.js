@@ -8,4 +8,18 @@ $(document).ready(function() {
         navigationPosition: "right",
         navigationTooltips: [ "revelin", "sales", "fees", "promo", "integrate", "more", "data" ]
 	});
+
+	$('.arrowUp').click(function() {
+		$.fn.fullpage.moveSectionUp();
+	});
+
+	$('.arrowDown').click(function() {
+		$.fn.fullpage.moveSectionDown();
+	});
+
+	$(".toggle-mnu").click(function() {
+	  $(this).toggleClass("on");
+	  $("#drawer").toggle('slide');
+	  return false;
+	});
 });

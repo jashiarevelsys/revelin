@@ -1,8 +1,47 @@
 /* new custom styles */
+/* VARIABLES */
+
+
+$revelblue: #00a3e0;
+$mobile: 650px;
+$medium: 1000px;
 
 #drawer {
 	#menu {
 		list-style: none;
+
+		li {
+			a {
+				position: relative;
+				color: white;
+				text-decoration: none;
+
+				&:hover {
+					color: $revelblue;
+					&:before {
+						visibility: visible;
+						transform-origin: left;
+						-webkit-transform: scaleX(1);
+						transform: scaleX(1);
+					}
+				}
+				&:before {
+					content: "";
+					position: absolute;
+					transform-origin: left;
+					width: 100%;
+					height: 2px;
+					bottom: 0;
+					left: 0;
+					background-color: white;
+					visibility: hidden;
+					-webkit-transform: scaleX(0);
+					transform: scaleX(0);
+					-webkit-transition: all 0.5s ease-in-out 0s;
+					transition: all 0.5s ease-in-out 0s;
+				}
+			}
+		}
 	}
 }
 
@@ -13,9 +52,179 @@
 			a {
 				span {
 					background: #fff;
+					&:hover {
+						background: $revelblue;
+					}
+				}
+				&.active {
+					span {
+						background: $revelblue;					
+					}
 				}
 
 			}
 		 }
 	}
 }
+
+/* adds the arrow control to the page */
+
+.arrowUp, .arrowDown {
+    position:fixed;
+    z-index:99;
+    cursor: pointer;
+    margin-left: -38px;
+    left: 50%;
+
+    a {
+	  display: inline-block;
+	}
+
+	a:hover .left, a:hover .top, a:hover .bottom, a:hover .right{
+	  border: 0.2em solid $revelblue;
+	  /*background-color: rgba(156, 156, 156, 0.5);*/
+	}
+
+	a:hover .left:after, a:hover .top:after, a:hover .bottom:after, a:hover .right:after {
+	  border-top: 0.5em solid $revelblue;
+	  border-right: 0.5em solid $revelblue;
+	}
+
+	.top, .bottom {
+		border-radius: 20%;
+		border: 0.2em solid #8a8a8a;
+	  display: inline-block;
+	  width: 4em;
+	  height: 4em;
+
+	}
+
+	.top:after {
+	  content: '';
+		display: inline-block;
+	  margin-top: 36%;
+	  width: 1.4em;
+	  height: 1.4em;
+	  border-top: 0.3em solid #8a8a8a;
+	  border-right: 0.3em solid #8a8a8a;
+	  -moz-transform: rotate(-45deg);
+	  -webkit-transform: rotate(-45deg);
+	  transform: rotate(-45deg);
+	  margin-left: 30%;
+	}
+
+
+	.bottom:after {
+	  content: '';
+	  display: inline-block;
+	  margin-top: 26%;
+	  width: 1.4em;
+	  height: 1.4em;
+	  border-top: 0.3em solid #8a8a8a;
+	  border-right: 0.3em solid #8a8a8a;
+	  -moz-transform: rotate(135deg);
+	  -webkit-transform: rotate(135deg);
+	  transform: rotate(135deg);
+	  margin-left: 30%;
+	}
+
+}
+
+.arrowDown {
+    bottom: 20px;
+
+}
+.arrowUp {
+    top: 20px;
+}
+
+body {
+
+	&.fp-viewing-revelin {
+
+		.arrowUp {
+			display: none;
+		}
+	}
+
+	&.fp-viewing-data {
+		.arrowDown {
+			display: none;
+		}
+	}
+}
+
+.textbox {
+	background-color: rgba(0, 0, 0, 0.5);
+
+	@media (max-width: $mobile) {
+		&.tb-left, &.tb-bottom {
+		    width: 95%;
+		    margin-left: 10px;
+		}
+	}
+}
+
+#fullpage {
+	margin-left: 200px;
+	width: 100%;
+
+	@media (max-width: $mobile) {
+		margin-left: 0px; 
+	}
+}
+
+#drawer {
+
+	@media (max-width: $mobile) {
+		display: none;
+	}
+}
+
+@media (max-width: $mobile) {
+	.toggle-mnu {
+		position: absolute;
+		left: 20px;
+	  	display: block;
+	  	width: 28px;
+	  	height: 28px;
+	  	margin-top: 14px;
+	  	z-index: 105;
+
+	  	span:after, span:before {
+	    	content: "";
+	    	position: absolute;
+	    	left: 0;
+	    	top: 9px;
+		}
+
+	  	span:after {
+	    	top: 18px;
+		}
+
+	  	span {
+	    	position: relative;
+	    	display: block;
+		}
+
+	  	span, span:after, span:before {
+		    width: 100%;
+		    height: 2px;
+		    background-color: #fff;
+		    transition: all 0.3s;
+		    backface-visibility: hidden;
+		    border-radius: 2px;
+		}
+
+	  	&.on span {
+	    	background-color: transparent;
+		}
+	  	&.on span:before {
+	    	transform: rotate(45deg) translate(-1px, 0px);
+		}
+		&.on span:after {
+		  transform: rotate(-45deg) translate(6px, -7px);
+		}
+	}
+}
+
