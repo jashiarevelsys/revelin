@@ -2,3 +2,4 @@ config.codekit
 node-modules/
 **/*.sass-cache
 bower_components/
+safe-starts/
