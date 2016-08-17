@@ -6,7 +6,15 @@ $(document).ready(function() {
         scrollingSpeed: 1000,
         navigation: true,
         navigationPosition: "right",
-        navigationTooltips: [ "revelin", "sales", "fees", "promo", "integrate", "more", "data" ]
+        navigationTooltips: [ "revelin", "sales", "fees", "promo", "integrate", "more", "data" ],
+        afterLoad: function(anchorLink) {
+        	var sectionClass = anchorLink;
+        	if ( sectionClass !== "revelin") {
+        		$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden');
+        	} else {
+       			$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden').css( "animation-delay", "1s" );
+        	}
+        }
 	});
 
 	$('.arrowUp').click(function() {
