@@ -138,6 +138,8 @@ em::after {
       transform: scaleX(0);
       -webkit-transition: all 0.5s ease-in-out 0s;
       transition: all 0.5s ease-in-out 0s; }
+  #drawer #menu .active a {
+    color: #00a3e0; }
 
 #fp-nav ul li a span {
   background: #fff; }

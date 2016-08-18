@@ -11,10 +11,11 @@ $(document).ready(function() {
         	var sectionClass = anchorLink;
         	if ( sectionClass !== "revelin") {
         		$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden');
-        	} else {
-       			$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden').css( { 	'-webkit-animation-delay': '2s',
-       																								'animation-delay': '2s' });
         	}
+        //	else {
+       	//		$(this).find('.textbox').addClass('animated zoomIn').removeAttr('hidden').css( { 	'-webkit-animation-delay': '2s',
+       	//																							'animation-delay': '2s' });
+        //	}
         },
         afterResize: function() {
         	var pluginContainerWidth = $(this).width();
