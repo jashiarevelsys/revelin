@@ -54,6 +54,11 @@ body {
   .tb-left {
     width: 50%;
   }
+  .tb-top {
+    width: 60%;
+    position: absolute;
+    top: 25%;
+  }
   .tb-bottom {
     bottom:0;
     position: absolute;
@@ -99,7 +104,7 @@ body {
     background-image: url('http://staging.revelsystems.com/wp-content/uploads/2016/08/revelin-promo-blur.jpg');
   }
   .integrate {
-    background-image: url('http://staging.revelsystems.com/wp-content/uploads/2016/08/revel-kds-integration.jpg');
+    background-image: url('http://staging.revelsystems.com/wp-content/uploads/2016/08/revel-in-kds-integration-shim.jpg');
     background-position:top center;
   }
   .more {

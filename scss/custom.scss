@@ -1,4 +1,7 @@
 /* new custom styles */
+
+@import 'marketo-forms';
+
 /* VARIABLES */
 
 
@@ -155,7 +158,7 @@ body {
 		}
 	}
 
-	&.fp-viewing-data {
+	&.fp-viewing-more {
 		.arrowDown {
 			display: none;
 		}
@@ -166,7 +169,7 @@ body {
 	background-color: rgba(0, 0, 0, 0.5);
 
 	@media (max-width: $mobile) {
-		&.tb-left, &.tb-bottom {
+		&.tb-left, &.tb-bottom, &.tb-top {
 		    width: 95%;
 		    margin-left: 10px;
 		}
@@ -257,3 +260,78 @@ body {
 	}
 }
 
+/* styles the textboxes */ 
+@media (max-height: 667px) {
+	
+
+	.textbox {
+		padding: 30px;
+		.revelin & {
+			h1 {
+				font-size: 1.5em;
+			}
+			p {
+				margin: .5em 0 1em;
+			}
+		}
+		.sales &, .fees &, .promo & {
+			em {font-size:2em;}
+		}
+		.promo & {
+			h2 {font-size:1.8em;}
+		}
+		.integrate & {
+
+		}
+		.data & {
+			em {font-size:1.8em;}
+			h2 { 
+				padding-top: 5px;
+			}
+
+		}
+		.more & {
+			p {
+				margin: 0 0 1em;
+			}
+			h2 {
+				font-size: 2em;
+				padding-top: 18px;
+			}
+		}
+	}
+	a.d-link {
+		margin: 13px 0;
+	}
+
+	.arrowUp, .arrowDown {
+		margin-left: -15px;
+		.bottom, .top {
+			width: 2.5em;
+    		height: 2.5em;
+    	}
+
+    	.bottom:after {
+    		margin-top: 20%;
+		    width: 1em;
+		    height: 1em;
+    	}
+    	.top:after {
+    		width: 1em;
+		    height: 1em;
+    	}
+
+	}
+
+
+	.blue {
+		    width: 61%;
+		    text-align: center;
+		    margin: 0 auto;
+		    display: inherit;
+	}
+	.tb-bottom {
+		bottom:inherit;
+		position: inherit;
+	}
+}
