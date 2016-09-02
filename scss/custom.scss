@@ -166,6 +166,10 @@ body {
 }
 
 .textbox {
+
+	h1 {
+		color: #00a3e0;
+	}
 	background-color: rgba(0, 0, 0, 0.5);
 
 	@media (max-width: $mobile) {

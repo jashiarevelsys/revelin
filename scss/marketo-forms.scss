@@ -1,6 +1,7 @@
 form.mktoForm {
 	
 	.mktoFormRow {
+		margin-bottom: 0px;
 		width: 45%;
 		margin-right: 4px;
 		.mktoFormCol {
@@ -15,6 +16,7 @@ form.mktoForm {
 			font-size: 1em;
 		}
 		@media (max-width: 1000px) {
+			margin-bottom: 10px;
 			width: 95%;
 
 			input {
@@ -47,8 +49,8 @@ form.mktoForm {
 
 		.mktoButtonWrap {
 			.mktoButton {
-				color:white;
-				border-color: #fff;
+		    	color: #00a3e0;
+				border-color: #00a3e0;
 			    display: inline-block;
 			    padding: 14px 21px 12px;
 			    border-radius: 5px;
@@ -60,9 +62,9 @@ form.mktoForm {
 			    transition: all .15s;
 
 			    &:hover{
-			    	    color: #00a3e0 !important;
-					    border-color: #00a3e0;
-					    cursor: pointer;
+					color:white;
+					border-color: #fff;
+					cursor: pointer;
 			    }
 			}
 		}
